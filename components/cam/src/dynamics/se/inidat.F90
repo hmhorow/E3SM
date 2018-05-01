@@ -234,10 +234,14 @@ contains
                1, npsq, 1, nlev, 1, nelemd, tmp, found, gridname='GLL')
        end if
 
+       !!!SZhang and HWan!!!!!!
        !!!!!!! Let the liquide water be zero in initial conditions.
        !!!!!!! This is used in the convergence test for CLUBB!!!!
+
        if ( reset_init_ql .and. (cnst_name(m_cnst).eq."CLDLIQ") ) tmp = 0.0_r8
+
        if ( reset_init_qi .and. (cnst_name(m_cnst).eq."CLDICE") ) tmp = 0.0_r8
+
        !!!! m_cnst==2 is liquid water  
 
        if(.not. found) then
